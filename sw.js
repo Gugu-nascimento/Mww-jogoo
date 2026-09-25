@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mww-cache-v1';
+const CACHE_NAME = 'mww-cache-v4';
 const assetsToCache = [
   './',
   './index.html',
