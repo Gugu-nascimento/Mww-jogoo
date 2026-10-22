@@ -2110,7 +2110,7 @@
 
       if (gameData.weeklyTraineeId) {
         let trainee = gameData.roster.find(w => w.id === gameData.weeklyTraineeId);
-        if (trainee && trainee.ovr < 99) {
+        if (trainee && trainee.ovr < 95) {
           if (trainee.treinoCount === undefined) trainee.treinoCount = 0;
           trainee.treinoCount++;
 
@@ -2124,12 +2124,12 @@
       }
 
       let isPPV = gameData.semana === 4;
-      let ticketIncome = gameData.roster.length * 120 + (isPPV ? 12000 : 1200);
+      let ticketIncome = gameData.roster.length * 350 + (isPPV ? 25000 : 3000);
       let salaryExpense = 0;
       let reportText = `Show finalizado com sucesso!\n\n• Bilheteria: + R$ ${ticketIncome.toLocaleString('pt-BR')}`;
 
       if (isPPV) {
-        salaryExpense = gameData.roster.length * 800;
+        salaryExpense = gameData.roster.length * 1000;
         gameData.dinheiro -= salaryExpense;
         reportText += `\n• Folha de Salários (PPV): - R$ ${salaryExpense.toLocaleString('pt-BR')}`;
       }
